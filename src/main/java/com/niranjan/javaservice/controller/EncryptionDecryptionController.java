@@ -1,9 +1,10 @@
-package com.quidcash.quidapp.controller;
+package com.niranjan.javaservice.controller;
 
-import com.quidcash.quidapp.dto.EncryptedDataDTO;
-import com.quidcash.quidapp.service.EncryptionDecryptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.niranjan.javaservice.dto.EncryptedDataDTO;
+import com.niranjan.javaservice.service.EncryptionDecryptionService;
 
 @RestController
 @RequestMapping("/api")

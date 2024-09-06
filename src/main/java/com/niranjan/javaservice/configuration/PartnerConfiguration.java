@@ -1,4 +1,4 @@
-package com.quidcash.quidapp.configuration;
+package com.niranjan.javaservice.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -12,13 +12,13 @@ import java.nio.file.Paths;
 public class PartnerConfiguration {
 
     private String partnerPublicKey;
-    private String quidPrivateKey;
+    private String privateKey;
 
     @PostConstruct
     public void init() throws Exception {
         // Load PEM files and extract keys
-        partnerPublicKey = loadPublicKeyFromPem("keys/ugro_public_key.pem");
-        quidPrivateKey = loadPrivateKeyFromPem("keys/quid_private_key.pem");
+        partnerPublicKey = loadPublicKeyFromPem("keys/partner_public_key.pem");
+        privateKey = loadPrivateKeyFromPem("keys/private_key.pem");
     }
 
     /**
@@ -58,7 +58,7 @@ public class PartnerConfiguration {
         return partnerPublicKey;
     }
 
-    public String getQuidPrivateKey() {
-        return quidPrivateKey;
+    public String getPrivateKey() {
+        return privateKey;
     }
 }

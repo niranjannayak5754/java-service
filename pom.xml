@@ -8,11 +8,11 @@
 		<version>3.3.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.quidcash</groupId>
-	<artifactId>quidapp</artifactId>
+	<groupId>com.niranjan</groupId>
+	<artifactId>javaservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>quidapp</name>
-	<description>QuidApp for Java Services</description>
+	<name>javaservice</name>
+	<description>Java Services API Server</description>
 	<url/>
 	<licenses>
 		<license/>

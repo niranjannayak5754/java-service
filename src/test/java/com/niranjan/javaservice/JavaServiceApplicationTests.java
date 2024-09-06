@@ -1,10 +1,10 @@
-package com.quidcash.quidapp;
+package com.niranjan.javaservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuidappApplicationTests {
+class JavaServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

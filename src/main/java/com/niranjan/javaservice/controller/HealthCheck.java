@@ -1,4 +1,4 @@
-package com.quidcash.quidapp.controller;
+package com.niranjan.javaservice.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;

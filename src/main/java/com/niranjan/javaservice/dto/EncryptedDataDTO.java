@@ -1,4 +1,4 @@
-package com.quidcash.quidapp.dto;
+package com.niranjan.javaservice.dto;
 
 public class EncryptedDataDTO {
 

@@ -1,13 +1,13 @@
-package com.quidcash.quidapp;
+package com.niranjan.javaservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuidappApplication {
+public class JavaServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuidappApplication.class, args);
+		SpringApplication.run(JavaServiceApplication.class, args);
 	}
 
 }

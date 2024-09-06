@@ -1,7 +1,9 @@
-package com.quidcash.quidapp.service;
+package com.niranjan.javaservice.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.niranjan.javaservice.configuration.PartnerConfiguration;
+import com.niranjan.javaservice.dto.EncryptedDataDTO;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
@@ -16,14 +18,11 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
-import com.quidcash.quidapp.configuration.PartnerConfiguration;
-import com.quidcash.quidapp.dto.EncryptedDataDTO;
-
 /**
  * Utility class for RSA and AES encryption/decryption and digital signature handling.
  * Provides methods for secure data exchange and integrity verification.
  *
- * @author Niranjan Nayak <niranjan.nayak@quidcash.in>
+ * @author Niranjan Nayak <niranjannayak0717@gmail.com>
  * @since 01/09/2024
  */
 @Service
@@ -398,7 +397,7 @@ public class EncryptionDecryptionService {
                 throw new Exception("Payload not found Error");
             }
             // Decrypt the secret key using RSA
-            SecretKey secretKey = decryptSecretKeyWithRSA(encryptedSecretKey, getPrivateKeyFromBase64(partnerConfiguration.getQuidPrivateKey()));
+            SecretKey secretKey = decryptSecretKeyWithRSA(encryptedSecretKey, getPrivateKeyFromBase64(partnerConfiguration.getPrivateKey()));
 
             // Decrypt the payload using AES
             String decryptedData = decryptPayloadWithAES(payload, secretKey);
@@ -445,7 +444,7 @@ public class EncryptionDecryptionService {
             String encryptedAESKey = encryptSecretKeyWithRSA(aesKey, getPublicKeyFromBase64(partnerPublicKey));
 
             // Sign AES key with server's private key
-            String signature = signSecretKeyWithRSA(aesKey, getPrivateKeyFromBase64(partnerConfiguration.getQuidPrivateKey()));
+            String signature = signSecretKeyWithRSA(aesKey, getPrivateKeyFromBase64(partnerConfiguration.getPrivateKey()));
 
             // Return encrypted request containing signature, encrypted message, and encrypted AES key
             return new EncryptedDataDTO(signature, encryptedMessage, encryptedAESKey);
